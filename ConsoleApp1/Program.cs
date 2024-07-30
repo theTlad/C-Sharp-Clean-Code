@@ -6,10 +6,16 @@ class Program
     {
         CustomerService customerService = new CustomerService("John Doe");
         Console.WriteLine(customerService.GetCustomerName());
+
+        customerService.GetCustomerById(1);
     }
 
     class CustomerService //PascalCase
     {
+        /// <summary>
+        /// Provides functinalities for handling customers
+        /// </summary>
+        /// <param name="customerName"></param>
         public CustomerService(string customerName)
         {
             _customerName = customerName;
@@ -24,6 +30,16 @@ class Program
         private string lastCustomerName = "John"; // camelCase for private property
 
         private string _customerName = "";
+
+        /// <summary>
+        /// Gets the customer by id
+        /// </summary>
+        /// <param name="customerId">The id for the customer to retrieve</param>
+        /// <returns>Return the customer found by the id</returns>
+        public Customer GetCustomerById(int customerId)
+        {
+            return new Customer { Name = "John Doe"};
+        }
 
         public string GetCustomerName() // PascalCase for method, camelCase for parameter
         {
@@ -78,5 +94,23 @@ class Program
         public void DeleteOrder()
         {
         }
+    }
+
+    /// <summary>
+    /// Use summary to describe the class as good as possible. E.g.:
+    /// Represents a customer with Id and Name
+    /// </summary>
+    public class Customer
+    {
+        /// <summary>
+        /// A summary can also be used for properties. E.g.:
+        /// Gets the Id of the customer
+        /// </summary>
+        public int Id { get; }
+
+        /// <summary>
+        /// Gets or sets the name of the customer
+        /// </summary>
+        public string Name { get; set; }
     }
 }
