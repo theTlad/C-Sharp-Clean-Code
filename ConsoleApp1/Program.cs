@@ -33,6 +33,19 @@ class Program
 
     class OrderProcessor // nouns for class names
     {
+        // Use "has" or "is" for boolean values
+        private bool hasErrors = false;
+        private bool isValid = true;
+        
+        // Use PascalCase for methods
+        public bool IsValid()
+        {
+            return true;
+        }
+        
+        // Use PascalCase for properties
+        public bool HasErrors { get; set; }
+
         public void ProcessOrder() // verb for methods
         {
         }
