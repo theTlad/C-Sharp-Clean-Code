@@ -4,20 +4,30 @@ class Program
 {
     static void Main(string[] args)
     {
+        CustomerService customerService = new CustomerService("John Doe");
+        Console.WriteLine(customerService.GetCustomerName());
     }
 
     class CustomerService //PascalCase
     {
+        public CustomerService(string customerName)
+        {
+            _customerName = customerName;
+            // Alternative: Use this.nnn if private property name not starting with underscore.
+            // this.customerName = customerName;
+        }
+        
         public const int MAX_CUSTOMERS = 100; // ALL_CAPS for const
         
         public int CustomerCount { get; set; } // PascalCase on public property
 
         private string lastCustomerName = "John"; // camelCase for private property
 
-        public string GetCustomerName(int customerId) // PascalCase for method, camelCase for parameter
+        private string _customerName = "";
+
+        public string GetCustomerName() // PascalCase for method, camelCase for parameter
         {
-            string customerName = "John Doe"; // camelCase for internal variable
-            return customerName;
+            return _customerName;
         }
     }
 }
