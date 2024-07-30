@@ -6,6 +6,9 @@ class Program
 {
     static void Main(string[] args)
     {
+        ErrorHandling errorHandling = new ErrorHandling();
+        errorHandling.ReadFile("a/b.txt");
+
         CustomerService customerService = new CustomerService("John Doe");
         Console.WriteLine(customerService.GetCustomerName());
 
