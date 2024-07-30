@@ -1,4 +1,5 @@
 ﻿using ConsoleApp1.Models;
+using ConsoleApp1.Services;
 
 namespace ConsoleApp1;
 
@@ -6,15 +7,19 @@ class Program
 {
     static void Main(string[] args)
     {
-        ErrorHandling errorHandling = new ErrorHandling();
-        errorHandling.ReadFile("a/b.txt");
+        Order order = new Order { Id = 1, ProductName = "Laptop", Quantity = 2, Price = 28.99 };
+        OrderService orderService = new OrderService();
+        orderService.AddOrder(order);
 
-        CustomerService customerService = new CustomerService("John Doe");
-        Console.WriteLine(customerService.GetCustomerName());
-
-        customerService.GetCustomerById(1);
-
-        Product product = new Product();
+        // ErrorHandling errorHandling = new ErrorHandling();
+        // errorHandling.ReadFile("a/b.txt");
+        //
+        // CustomerService customerService = new CustomerService("John Doe");
+        // Console.WriteLine(customerService.GetCustomerName());
+        //
+        // customerService.GetCustomerById(1);
+        //
+        // Product product = new Product();
     }
 
     class CustomerService //PascalCase
