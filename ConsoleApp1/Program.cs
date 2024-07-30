@@ -1,4 +1,6 @@
-﻿namespace ConsoleApp1;
+﻿using ConsoleApp1.Models;
+
+namespace ConsoleApp1;
 
 class Program
 {
@@ -8,6 +10,8 @@ class Program
         Console.WriteLine(customerService.GetCustomerName());
 
         customerService.GetCustomerById(1);
+
+        Product product = new Product();
     }
 
     class CustomerService //PascalCase
