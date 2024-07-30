@@ -44,6 +44,12 @@ class Program
         {
             return false;
         }
+
+        //TODO: Implement the binary search algorithm
+        public int BinarySearch()
+        {
+            return -1;
+        }
     }
 
     class OrderProcessor // nouns for class names
