@@ -42,7 +42,7 @@ class Program
         /// <returns>Return the customer found by the id</returns>
         public Customer GetCustomerById(int customerId)
         {
-            return new Customer { Name = "John Doe"};
+            return new Customer { Name = "John Doe" };
         }
 
         public string GetCustomerName() // PascalCase for method, camelCase for parameter
@@ -87,9 +87,31 @@ class Program
         // Use PascalCase for properties
         public bool HasErrors { get; set; }
 
-        public void ProcessOrder() // verb for methods
+        public void ProcessOrder(Order order) // verb for methods
         {
+            if (IsValid(order))
+            {
+                SaveOrder(order);
+                NotifyCustomer(order);
+            }
         }
+
+        private bool IsValid(Order order)
+        {
+            //TODO: Validate order logic
+            return false;
+        }
+
+        private void SaveOrder(Order order)
+        {
+            //TODO: Save order login
+        }
+
+        private void NotifyCustomer(Order order)
+        {
+            //TODO: Notify customer logic
+        }
+
 
         public void PrintOrder()
         {
